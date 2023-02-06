@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.68.0.dev2'
+project:
+    name: nonprofit-program-management
+    package:
+        name: nonprofit-program-management
+        api_version: '55.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/nonprofit-program-management/tests
+            options:
+                outputdir: robot/nonprofit-program-management/results
+
+    robot_testdoc:
+        options:
+            path: robot/nonprofit-program-management/tests
+            output: robot/nonprofit-program-management/doc/nonprofit-program-management_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
