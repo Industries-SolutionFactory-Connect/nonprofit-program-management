@@ -1,0 +1,320 @@
+Insert ApexClass:
+  sf_object: ApexClass
+  table: ApexClass
+  fields:
+  - ApiVersion
+  - Name
+  - LengthWithoutComments
+  - Status
+  - IsValid
+Insert ApplicationSubtypeDefinition:
+  sf_object: ApplicationSubtypeDefinition
+  table: ApplicationSubtypeDefinition
+  fields:
+  - ApplicationUsageType
+  - Description
+  - DeveloperName
+  - MasterLabel
+  - Language
+Insert ContentAsset:
+  sf_object: ContentAsset
+  table: ContentAsset
+  fields:
+  - MasterLabel
+  - DeveloperName
+  - IsVisibleByExternalUsers
+Insert WorkBadgeDefinition:
+  sf_object: WorkBadgeDefinition
+  table: WorkBadgeDefinition
+  fields:
+  - IsActive
+  - Name
+  - IsCompanyWide
+  - Description
+  - ImageUrl
+  - LimitNumber
+  - IsLimitPerUser
+  - LimitStartDate
+Insert BenefitType:
+  sf_object: BenefitType
+  table: BenefitType
+  fields:
+  - Category
+  - Description
+  - Name
+  - ProcessType
+Insert GoalDefinition:
+  sf_object: GoalDefinition
+  table: GoalDefinition
+  fields:
+  - Name
+Insert UnitOfMeasure:
+  sf_object: UnitOfMeasure
+  table: UnitOfMeasure
+  fields:
+  - Description
+  - Name
+  - Type
+  - UnitCode
+Insert BusinessHours:
+  sf_object: BusinessHours
+  table: BusinessHours
+  fields:
+  - IsActive
+  - Name
+  - IsDefault
+  - FridayEndTime
+  - FridayStartTime
+  - MondayEndTime
+  - MondayStartTime
+  - SaturdayEndTime
+  - SaturdayStartTime
+  - SundayEndTime
+  - SundayStartTime
+  - ThursdayEndTime
+  - ThursdayStartTime
+  - TimeZoneSidKey
+  - TuesdayEndTime
+  - TuesdayStartTime
+  - WednesdayEndTime
+  - WednesdayStartTime
+Insert BusinessProcess:
+  sf_object: BusinessProcess
+  table: BusinessProcess
+  fields:
+  - TableEnumOrId
+  - Name
+Insert BusinessProcessTypeDef:
+  sf_object: BusinessProcessTypeDef
+  table: BusinessProcessTypeDef
+  fields:
+  - ApplicationUsageType
+  - Description
+  - DeveloperName
+  - MasterLabel
+  - Language
+Insert WebLink:
+  sf_object: WebLink
+  table: WebLink
+  fields:
+  - OpenType
+  - LinkType
+  - Description
+  - DisplayType
+  - Height
+  - MasterLabel
+  - EncodingKey
+  - Name
+  - PageOrSobjectType
+  - IsProtected
+  - RequireRowSelection
+  - IsResizable
+  - ShowsLocation
+  - HasMenubar
+  - HasScrollbars
+  - ShowsStatus
+  - HasToolbar
+  - Url
+  - Width
+  - Position
+Insert EnhancedLetterhead:
+  sf_object: EnhancedLetterhead
+  table: EnhancedLetterhead
+  fields:
+  - Name
+Insert BrandTemplate:
+  sf_object: BrandTemplate
+  table: BrandTemplate
+  fields:
+  - Name
+  - Value
+  - DeveloperName
+  - IsActive
+Insert Folder:
+  sf_object: Folder
+  table: Folder
+  fields:
+  - AccessType
+  - DeveloperName
+  - Name
+  - IsReadonly
+  - Type
+  lookups:
+    ParentId:
+      table: Folder
+      key_field: ParentId
+      after: Insert Folder
+Insert IdentityVerificationProcDef:
+  sf_object: IdentityVerificationProcDef
+  table: IdentityVerificationProcDef
+  fields:
+  - MasterLabel
+  - Language
+  - DeveloperName
+  - SearchLayoutType
+Insert JournalType:
+  sf_object: JournalType
+  table: JournalType
+  fields:
+  - Description
+  - ProcessType
+  - Name
+Insert Pricebook2:
+  sf_object: Pricebook2
+  table: Pricebook2
+  fields:
+  - IsActive
+  - Description
+  - Name
+Insert Benefit:
+  sf_object: Benefit
+  table: Benefit
+  fields:
+  - IsActive
+  - BenefitFrequency
+  - Name
+  - BenefitStatus
+  - Description
+  - EndDateTime
+  - EnrollmentCount
+  - MaxBenefitAmount
+  - MinBenefitAmount
+  - StartDateTime
+  lookups:
+    BenefitTypeId:
+      table: BenefitType
+      key_field: BenefitTypeId
+    GoalDefinitionId:
+      table: GoalDefinition
+      key_field: GoalDefinitionId
+    UnitId:
+      table: UnitOfMeasure
+      key_field: UnitId
+Insert EmailTemplate:
+  sf_object: EmailTemplate
+  table: EmailTemplate
+  fields:
+  - ApiVersion
+  - IsActive
+  - RelatedEntityType
+  - Description
+  - Body
+  - Name
+  - Encoding
+  - HtmlValue
+  - Markup
+  - TemplateStyle
+  - Subject
+  - TemplateType
+  - DeveloperName
+  - UiType
+  lookups:
+    EnhancedLetterheadId:
+      table: EnhancedLetterhead
+      key_field: EnhancedLetterheadId
+    BrandTemplateId:
+      table: BrandTemplate
+      key_field: BrandTemplateId
+Insert ExplainabilityActionDef:
+  sf_object: ExplainabilityActionDef
+  table: ExplainabilityActionDef
+  fields:
+  - ActionLogSchemaType
+  - ApplicationType
+  - Description
+  - DeveloperName
+  - IsInternal
+  - MasterLabel
+  - Language
+  lookups:
+    ApplicationSubtypeId:
+      table: ApplicationSubtypeDefinition
+      key_field: ApplicationSubtypeId
+    ProcessTypeId:
+      table: BusinessProcessTypeDef
+      key_field: ProcessTypeId
+Insert IdentityVerificationProcDtl:
+  sf_object: IdentityVerificationProcDtl
+  table: IdentityVerificationProcDtl
+  fields:
+  - DataSourceType
+  - IsActive
+  - MasterLabel
+  - Language
+  - DeveloperName
+  - ObjectName
+  - OptionalVerifiersMinVerfCount
+  - SearchFilter
+  - SearchRecordUniqueIdField
+  - SearchResultSortBy
+  - SearchSequenceNumber
+  - SearchType
+  lookups:
+    ApexClassId:
+      table: ApexClass
+      key_field: ApexClassId
+    IdentityVerificationProcDefId:
+      table: IdentityVerificationProcDef
+      key_field: IdentityVerificationProcDefId
+    LinkedIdVerfProcessDetId:
+      table: IdentityVerificationProcDtl
+      key_field: LinkedIdVerfProcessDetId
+      after: Insert IdentityVerificationProcDtl
+Insert ContentWorkspace:
+  sf_object: ContentWorkspace
+  table: ContentWorkspace
+  fields:
+  - ShouldAddCreatorMembership
+  - Description
+  - Name
+  - DeveloperName
+  lookups:
+    WorkspaceImageId:
+      table: ContentAsset
+      key_field: WorkspaceImageId
+Insert RecordType:
+  sf_object: RecordType
+  table: RecordType
+  fields:
+  - Description
+  - Name
+  - DeveloperName
+  - SobjectType
+  lookups:
+    BusinessProcessId:
+      table: BusinessProcess
+      key_field: BusinessProcessId
+Insert ExplainabilityActionVersion:
+  sf_object: ExplainabilityActionVersion
+  table: ExplainabilityActionVersion
+  fields:
+  - ActionLogMessageTemplate
+  - ActionSpecification
+  - IsActive
+  - DefinitionVersion
+  - Description
+  - DeveloperName
+  - MasterLabel
+  - Language
+  lookups:
+    ExplainabilityActionDefId:
+      table: ExplainabilityActionDef
+      key_field: ExplainabilityActionDefId
+Insert IdentityVerificationProcFld:
+  sf_object: IdentityVerificationProcFld
+  table: IdentityVerificationProcFld
+  fields:
+  - IsActive
+  - CustomFieldLabel
+  - DataSourceType
+  - FieldName
+  - FieldType
+  - FieldValueFormula
+  - MasterLabel
+  - Language
+  - DeveloperName
+  - SequenceNumber
+  lookups:
+    IdentityVerificationProcDtlId:
+      table: IdentityVerificationProcDtl
+      key_field: IdentityVerificationProcDtlId
