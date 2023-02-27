@@ -1,9 +1,9 @@
-minimum_cumulusci_version: '3.68.0.dev2'
+minimum_cumulusci_version: '3.73.0'
 project:
     name: nonprofit-program-management
     package:
         name: nonprofit-program-management
-        api_version: '55.0'
+        api_version: '57.0'
     git:
         default_branch: 'main'
         prefix_feature: 'feature/'
@@ -26,3 +26,46 @@ tasks:
     run_tests:
         options:
             required_org_code_coverage_percent: 75
+flows:
+  programmanagement_metadata:
+    steps:
+      3:
+        task: deploy
+        options: 
+          path: force-app/main/default/pm_metadata_bundle
+        ui_options:
+          name: Deploy metadata related to program management for non profit.
+
+plans:
+  install:
+   slug: install
+   tier: primary
+   title: Install Program Management Sample Configuration
+   checks:
+      - when: "not org_config.is_person_accounts_enabled"
+        action: error
+        message: "Non profit Cloud requires Person Accounts. Please activate the Person Accounts feature and try again."
+      - when: "'CSN_User' not in tasks.get_available_licenses()"
+        action: error
+        message: "You need Chatter Free license to use this solution. Contact your Account Executive to purchase licenses."
+      - when: "'CLOUD_INTEGRATION_USER' not in tasks.get_available_licenses()"
+        action: error
+        message: "You need Cloud Integration User license to use this solution. Contact your Account Executive to purchase licenses."
+      - when: "'SFDC' not in tasks.get_available_licenses()"
+        action: error
+        message: "You need Salesforce license to use this solution. Contact your Account Executive to purchase licenses."
+      - when: "'CSN_External_User' not in tasks.get_available_licenses()"
+        action: error
+        message: "You need Chatter External License to use this solution. Contact your Account Executive to purchase licenses."
+      - when: "'PID_Guest_User' not in tasks.get_available_licenses()"
+        action: error
+        message: "You need Guest license to use this solution. Contact your Account Executive to purchase licenses."
+      - when: "'PID_Identity_User' not in tasks.get_available_licenses()"
+        action: error
+        message: "You need identity license to use this solution. Contact your Account Executive to purchase licenses."
+      - when: "'C2CHeadlessCMSAccessPermSet','ExplainabilityServicePSL','LifeEventsAccessPSL' not in tasks.get_available_permission_sets()"
+        action: error
+        message: "Please ensure all the required permission sets are assigned to the user before installing this solution."
+   steps:
+      1: 
+        flow: programmanagement_metadata
