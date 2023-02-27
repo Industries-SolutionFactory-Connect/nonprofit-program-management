@@ -65,7 +65,13 @@ plans:
         message: "You need identity license to use this solution. Contact your Account Executive to purchase licenses."
       - when: "'C2CHeadlessCMSAccessPermSet' not in tasks.get_available_permission_sets()"
         action: error
-        message: "Please ensure all the required permission sets are assigned to the user before installing this solution."
+        message: "Please ensure Salesforce CMS Integration Admin permission set is assigned to the user before installing this solution."
+        - when: "'ExplainabilityServicePSL' not in tasks.get_available_permission_sets()"
+        action: error
+        message: "Please ensure Decision Explainer Service Access permission set is assigned to the user before installing this solution."
+        - when: "'LifeEventsAccessPSL' not in tasks.get_available_permission_sets()"
+        action: error
+        message: "Please ensure Business Milestones and Life Events Access permission set is assigned to the user before installing this solution."
    steps:
       1: 
         flow: programmanagement_metadata
