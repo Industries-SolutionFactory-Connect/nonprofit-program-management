@@ -51,6 +51,18 @@
         "Please ensure all the required permission sets are assigned to the user before installing this solution.": {
             "message": "Please ensure all the required permission sets are assigned to the user before installing this solution.",
             "description": "shown if validation fails"
+        },
+        "Please ensure Salesforce CMS Integration Admin permission set is assigned to the user before installing this solution.": {
+            "message": "Please ensure Salesforce CMS Integration Admin permission set is assigned to the user before installing this solution.",
+            "description": "shown if validation fails"
+        },
+        "Please ensure Decision Explainer Service Access permission set is assigned to the user before installing this solution.": {
+            "message": "Please ensure Decision Explainer Service Access permission set is assigned to the user before installing this solution.",
+            "description": "shown if validation fails"
+        },
+        "Please ensure Business Milestones and Life Events Access permission set is assigned to the user before installing this solution.": {
+            "message": "Please ensure Business Milestones and Life Events Access permission set is assigned to the user before installing this solution.",
+            "description": "shown if validation fails"
         }
     },
     "steps": {
