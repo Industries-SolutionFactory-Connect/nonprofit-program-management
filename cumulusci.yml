@@ -63,7 +63,7 @@ plans:
       - when: "'PID_Identity_User' not in tasks.get_available_licenses()"
         action: error
         message: "You need identity license to use this solution. Contact your Account Executive to purchase licenses."
-      - when: "'C2CHeadlessCMSAccessPermSet','ExplainabilityServicePSL','LifeEventsAccessPSL' not in tasks.get_available_permission_sets()"
+      - when: "('C2CHeadlessCMSAccessPermSet','ExplainabilityServicePSL','LifeEventsAccessPSL') not in tasks.get_available_permission_sets()"
         action: error
         message: "Please ensure all the required permission sets are assigned to the user before installing this solution."
    steps:
