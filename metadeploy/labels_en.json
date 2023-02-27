@@ -1,0 +1,62 @@
+{
+    "product": {
+        "title": {
+            "message": "Program Management",
+            "description": "name of product"
+        },
+        "short_description": {
+            "message": "Short description <<TO BE UPDATED>>",
+            "description": "tagline of product"
+        },
+        "description": {
+            "message": "description <<TO BE UPDATED>>",
+            "description": "shown on product detail page (markdown)"
+        }
+    },
+    "plan:install": {
+        "title": {
+            "message": "Install Program Management Sample Configuration",
+            "description": "title of installation plan"
+        }
+    },
+    "checks": {
+        "Non profit Cloud requires Person Accounts. Please activate the Person Accounts feature and try again.": {
+            "message": "Non profit Cloud requires Person Accounts. Please activate the Person Accounts feature and try again.",
+            "description": "shown if validation fails"
+        },
+        "You need Chatter Free license to use this solution. Contact your Account Executive to purchase licenses.": {
+            "message": "You need Chatter Free license to use this solution. Contact your Account Executive to purchase licenses.",
+            "description": "shown if validation fails"
+        },
+        "You need Cloud Integration User license to use this solution. Contact your Account Executive to purchase licenses.": {
+            "message": "You need Cloud Integration User license to use this solution. Contact your Account Executive to purchase licenses.",
+            "description": "shown if validation fails"
+        },
+        "You need Salesforce license to use this solution. Contact your Account Executive to purchase licenses.": {
+            "message": "You need Salesforce license to use this solution. Contact your Account Executive to purchase licenses.",
+            "description": "shown if validation fails"
+        },
+        "You need Chatter External License to use this solution. Contact your Account Executive to purchase licenses.": {
+            "message": "You need Chatter External License to use this solution. Contact your Account Executive to purchase licenses.",
+            "description": "shown if validation fails"
+        },
+        "You need Guest license to use this solution. Contact your Account Executive to purchase licenses.": {
+            "message": "You need Guest license to use this solution. Contact your Account Executive to purchase licenses.",
+            "description": "shown if validation fails"
+        },
+        "You need identity license to use this solution. Contact your Account Executive to purchase licenses.": {
+            "message": "You need identity license to use this solution. Contact your Account Executive to purchase licenses.",
+            "description": "shown if validation fails"
+        },
+        "Please ensure all the required permission sets are assigned to the user before installing this solution.": {
+            "message": "Please ensure all the required permission sets are assigned to the user before installing this solution.",
+            "description": "shown if validation fails"
+        }
+    },
+    "steps": {
+        "Deploy metadata related to program management for non profit.": {
+            "message": "Deploy metadata related to program management for non profit.",
+            "description": "title of installation step"
+        }
+    }
+}
